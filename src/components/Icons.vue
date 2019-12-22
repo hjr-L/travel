@@ -75,6 +75,9 @@ export default {
     /* @import url('../assets/style/varibles.styl'); */
     @import "../assets/style/varibles.styl";
     @import "../assets/style/mixins.styl";
+    .icons{
+      margin-top: .1rem;
+    }
     .icons >>> .swiper-contaier{
         width: 100%;
         height: 0;
