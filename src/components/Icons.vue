@@ -1,6 +1,6 @@
 <template>
     <div class="icons">
-        <swiper class="swiper-contaier" >
+        <swiper :options="swiperOption" class="swiper-contaier" >
                 <swiper-slide v-for="(page, index) of pages" :key="index" >
                   <div class="icon" v-for="item of page" :key="item.id">
                     <div class="icon-img">
@@ -15,45 +15,14 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    iconList: Array
+  },
   data () {
     return {
-      iconList: [{
-        id: '0001',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-        desc: '酒店'
-      }, {
-        id: '0002',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/flight.png',
-        desc: '机票'
-      }, {
-        id: '0003',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/package.png',
-        desc: '度假'
-      }, {
-        id: '0004',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/train.png',
-        desc: '火车票'
-      }, {
-        id: '0005',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
-        desc: '景点门票'
-      }, {
-        id: '0006',
-        imgUrl: 'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png',
-        desc: '自然风光'
-      }, {
-        id: '0007',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/48/cb72b99b71974c02.png',
-        desc: '生活休闲'
-      }, {
-        id: '0008',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/f5/a963333e1fa802.png',
-        desc: '本地玩乐'
-      }, {
-        id: '0009',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/80/416c6ab3368d1f02.png',
-        desc: '全部玩乐'
-      }]
+      swiperOption: {
+        autoPlay: false
+      }
     }
   },
   computed: {
