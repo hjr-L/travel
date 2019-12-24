@@ -4,26 +4,27 @@
         <div class="iconfont back-icon">&#xe624;</div>
     </div>
     <div class="header-input">
-        <span class="iconfont">&#xe632;</span>
-        输入城市/景点/游玩主题</div>
-    <div class="header-right">{{city}}
-        <span class="iconfont arrow-icon">&#xe61e;</span>
+      <span class="iconfont">&#xe632;</span>
+      输入城市/景点/游玩主题
     </div>
+    <router-link to="/city">
+      <div class="header-right">
+        {{this.$store.state.city}}
+        <span class="iconfont arrow-icon">&#xe61e;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 <script>
 export default {
-  name: 'HomeHeader',
-  props: {
-    city: String
-  }
+  name: 'HomeHeader'
 }
 </script>
 <style lang="stylus"  scoped>
-  @import "../assets/style/varibles.styl"
+  @import "../assets/style/varibles.styl";
   .header {
-    line-height: .86rem;
     display: flex;
+    line-height: $headerHeight;
     background: $bgColor;
     color: #fff;
   }
@@ -37,19 +38,21 @@ export default {
   }
   .header-input {
     flex: 1;
-    background: #fff;
-    border-radius: .1rem;
-    margin-left: .2rem;
-    margin-top: .12rem;
-    padding-left: .2rem;
     height: .64rem;
-    color: #ccc;
     line-height: .64rem;
+    margin-top: .12rem;
+    margin-left: .2rem;
+    padding-left: .2rem;
+    border-radius: .1rem;
+    background: #fff;
+    color: #ccc;
   }
   .header-right {
-    width: 1.24rem;
+    min-width: 1.72rem;
+    padding: 0 .1rem
     float: right;
     text-align: center;
+    color: #fff;
   }
   .arrow-icon{
       margin-right: -.04rem;
