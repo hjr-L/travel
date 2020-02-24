@@ -61,6 +61,9 @@ export default {
     height 0
     // overflow hidden
     padding-bottom 100%
+    .gallary-img
+      width 100%
+      height 100%
     .swiper-img
       width 100%
     .swiper-pagination
